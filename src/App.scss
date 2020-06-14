@@ -1,0 +1,209 @@
+@import url("resetStyling.css");
+/* GLOBAL STYLES */
+
+$theme-color: rgb(254, 220, 1);
+$dark-primary: rgb(54, 53, 53);
+$dark-secondary: black;
+$light-primary: rgb(255, 218, 185);
+$light-secondary: rgb(252, 245, 245);
+$btn-danger: #ff1606;
+
+body {
+  width: 85vw;
+  min-height: 100vh;
+  margin: auto;
+  background: url("images/main-background.jpg") no-repeat center center/cover;
+}
+
+.error {
+  border: 2px #ff1606 solid;
+}
+
+/* HEADER */
+
+header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: $dark-secondary;
+  color: $theme-color;
+
+  h1 {
+    text-transform: uppercase;
+    font-size: 48px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 2px $theme-color solid;
+  }
+
+  ul {
+    height: 30px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    flex-direction: row nowrap;
+    // justify-content: space-around;
+    align-items: center;
+    text-align: center;
+
+    li {
+      width: 50%;
+      height: 100%;
+      border-left: 1px $theme-color solid;
+      border-right: 1px $theme-color solid;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      a {
+        color: $theme-color;
+      }
+    }
+  }
+}
+
+/* FORM */
+
+form {
+  margin-top: 130px;
+  text-align: center;
+  margin-bottom: 32px;
+
+  input {
+    height: 25px;
+    font-size: 16px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    margin: 1px;
+    border: 2px $dark-secondary solid;
+    border-radius: 3px;
+    background-color: $light-secondary;
+  }
+  input::placeholder {
+    color: $dark-primary;
+    padding-left: 5px;
+  }
+}
+
+/* TABLE */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  background-color: $light-secondary;
+  border-radius: 4px 4px 0 0;
+
+  thead {
+    tr {
+      th {
+        text-transform: uppercase;
+        padding: 15px;
+        background-color: $light-primary;
+        width: 30%;
+      }
+
+      .BtnColumn {
+        width: 10%;
+      }
+    }
+  }
+
+  tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+
+    tr {
+      td {
+        color: $dark-secondary;
+        padding: 15px 19px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.total {
+  text-transform: uppercase;
+  padding: 15px;
+  background-color: $light-primary;
+  text-align: center;
+  font-weight: 700;
+  word-spacing: 5px;
+  margin-bottom: 30px;
+  padding-right: calc(15px + 10%);
+}
+
+/* BUTTONS */
+
+.deleteBtn {
+  cursor: pointer;
+  color: $btn-danger;
+  font-size: 17px;
+  font-weight: 700;
+  border: none;
+  background: none;
+  padding: 0 10px;
+}
+.addItemBtn {
+  width: 80px;
+  margin: 0px 5px;
+  color: $light-secondary;
+  border: none;
+  background-color: $dark-secondary;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 700px) {
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .addItemBtn {
+    margin-top: 8px;
+  }
+
+  .header {
+    h1 {
+      line-height: 1.2;
+      margin: 10px 0;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  header {
+    height: 80px;
+
+    h1 {
+      font-size: 35px;
+    }
+  }
+
+  form {
+    margin-top: 110px;
+  }
+
+  table {
+    thead {
+      tr {
+        th {
+          padding: 15px 2px;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        td {
+          padding: 15px 2px;
+        }
+      }
+    }
+  }
+}
